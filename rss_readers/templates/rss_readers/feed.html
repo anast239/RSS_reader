@@ -1,0 +1,19 @@
+{% extends 'rss_readers/base.html' %}
+
+{% block header %}
+	<h2>{{ feed }}</h2>
+	<p><a href="{% url 'rss_readers:edit_feed' feed.id %}">(edit feed)</a></p>
+{% endblock header %}
+
+{% block content %}
+
+<ul>
+  {% for i in items %}
+      <li>
+        <h4><a href="{{ i.href }}" style="color: #415b76; !important"><b>{{ i.title }}</b></a></h4>
+        <i>{{ i.description }}</i>
+      </li>
+  {% endfor %}
+</ul>
+
+{% endblock content %}

@@ -1,0 +1,21 @@
+{% extends "rss_readers/base.html" %}
+
+{% load bootstrap3 %}
+
+{% block header %}
+  <h2>Edit feed:</h2>
+{% endblock header %}
+
+{% block content %} 
+
+  <form action="{% url 'rss_readers:edit_feed' feed.id %}" method='post'>
+    
+{% csrf_token %}
+    {% bootstrap_form form %}
+
+    {% buttons %}
+      <button name="submit" class="btn btn-primary">Save changes</button>
+    {% endbuttons %}
+  </form>
+
+{% endblock content %}

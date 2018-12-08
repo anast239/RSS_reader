@@ -1,0 +1,18 @@
+{% extends 'rss_readers/base.html' %}
+
+{% block header %}
+  <div style="background: #e6e6fa; !important"  class='jumbotron'>
+    <h2>Learn about the news quickly.</h2>
+    <h3>RSS reader helps you to read RSS feeds and save your favorite RSS feeds.</h3>
+  </div>
+{% endblock header %}
+
+{% block content %}
+  <h2>
+    <a href="{% url 'users:register' %}">Register an account</a> to add RSS feeds.
+  </h2>
+  <h2>
+    If you already have your RSS feed list, <a href="{% url 'users:login' %}">log in</a> to <a href="{% url 'rss_readers:feeds' %}">view</a> or change it.
+  </h2>
+
+{% endblock content %}

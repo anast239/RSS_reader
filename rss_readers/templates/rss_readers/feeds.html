@@ -1,0 +1,24 @@
+{% extends 'rss_readers/base.html' %}
+
+{% block header %}
+  <h2>Feeds</h2>
+{% endblock header %}
+
+{% block content %}
+
+{% for feed in feeds %}
+  <div style="background: #c4e2f2; !important" class="panel panel-info">
+    <div class="panel-body">
+      <a href="{% url 'rss_readers:feed' feed.id %}" style="color: #415b76; !important"><b>{{ feed }}</b></a>
+      <small>
+        <a href="{% url 'rss_readers:edit_feed' feed.id %}">(edit feed)</a>
+      </small>
+      <span style="background: #415b76; !important" class="badge pull-right">{{ feed.category }}</span>
+    </div> 
+  </div>
+{% empty %}
+  <li>No tasks have been added yet</li>
+{% endfor %} 
+
+
+{% endblock content %}
