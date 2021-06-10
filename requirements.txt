@@ -1,7 +1,7 @@
 beautifulsoup4==4.6.3
 certifi==2018.11.29
 chardet==3.0.4
-Django==1.10
+Django==2.2.24
 django-bootstrap3==11.0.0
 get==2018.11.19
 idna==2.7
